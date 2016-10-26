@@ -2,45 +2,43 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-
         try {
-            BufferedReader s = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in1.txt"));
-            SparseMatrix matrixASparse = new SparseMatrix(s);
+            //reading
+            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in1.txt"));
+            SMatrix matrixAS = new SMatrix(br);
 
-            s = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in2.txt"));
-            SparseMatrix matrixBSparse = new SparseMatrix(s);
+            br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in2.txt"));
+            SMatrix matrixBS = new SMatrix(br);
 
-            s = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in3.txt"));
-            DenseMatrix matrixADense = new DenseMatrix(s);
+            br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in3.txt"));
+            DMatrix matrixAD = new DMatrix(br);
 
-            s = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in4.txt"));
-            DenseMatrix matrixBDense = new DenseMatrix(s);
+            br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in4.txt"));
+            DMatrix matrixBD = new DMatrix(br);
 
-            SparseMatrix s_s = (SparseMatrix) matrixASparse.mul(matrixBSparse);
-            BufferedWriter sp = new BufferedWriter(new FileWriter(("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\SparseSparse.txt")));
-            s_s.mapOut(sp);
-            sp.close();
+            //writing
+            SMatrix sxs = (SMatrix) matrixAS.mul(matrixBS);
+            BufferedWriter bw = new BufferedWriter(new FileWriter(("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\SxS.txt")));
+            sxs.mapOut(bw);
+            bw.close();
 
+            SMatrix dxs = (SMatrix) matrixAD.mul(matrixBS);
+            bw = new BufferedWriter(new FileWriter(("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\DxS.txt")));
+            dxs.mapOut(bw);
+            bw.close();
 
-            DenseMatrix d_d = (DenseMatrix) matrixADense.mul(matrixBDense);
-            BufferedWriter dn = new BufferedWriter(new FileWriter(("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\DenseDense.txt")));
-            d_d.matOut(dn);
-            dn.close();
+            SMatrix sxd = (SMatrix) matrixAS.mul(matrixBD);
+            bw = new BufferedWriter(new FileWriter(("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\SxD.txt")));
+            sxd.mapOut(bw);
+            bw.close();
 
-            SparseMatrix d_s = (SparseMatrix) matrixADense.mul(matrixBSparse);
-            sp = new BufferedWriter(new FileWriter(("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\DenseSparse.txt")));
-            d_s.mapOut(sp);
-            sp.close();
-
-            SparseMatrix s_d = (SparseMatrix) matrixASparse.mul(matrixBDense);
-            sp = new BufferedWriter(new FileWriter(("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\SparseDense.txt")));
-            s_d.mapOut(sp);
-            sp.close();
-
+            DMatrix dxd = (DMatrix) matrixAD.mul(matrixBD);
+            BufferedWriter bw2 = new BufferedWriter(new FileWriter(("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\DxD.txt")));
+            dxd.matOut(bw2);
+            bw2.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
