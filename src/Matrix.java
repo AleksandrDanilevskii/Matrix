@@ -1,4 +1,3 @@
-
 interface Matrix{
-    //public Matrix mul(Matrix other);
+    public Matrix mul(Matrix other);
 }
