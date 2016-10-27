@@ -119,6 +119,7 @@ public class DMatrix implements Matrix {
         }
     }
 
+
     public boolean equals(Object o) {
         boolean t = true;
         if (!(o instanceof DMatrix)) {

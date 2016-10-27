@@ -4,16 +4,16 @@ public class Main {
     public static void main(String[] args) {
         try {
             //reading
-            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in1.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\matrix1.txt"));
             SMatrix matrixAS = new SMatrix(br);
 
-            br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in2.txt"));
+            br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\matrix2.txt"));
             SMatrix matrixBS = new SMatrix(br);
 
-            br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in3.txt"));
+            br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\matrix3.txt"));
             DMatrix matrixAD = new DMatrix(br);
 
-            br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\in4.txt"));
+            br = new BufferedReader(new FileReader("C:\\Users\\Notebook\\IdeaProjects\\MulMatrix\\matrix4.txt"));
             DMatrix matrixBD = new DMatrix(br);
 
             //writing

@@ -168,6 +168,7 @@ public class SMatrix  implements Matrix {
                         }
                     }
                     bw.write("\n");
+                    System.out.println();
 
                 } else {
                     for (int j = 0; j < size; j++) {
